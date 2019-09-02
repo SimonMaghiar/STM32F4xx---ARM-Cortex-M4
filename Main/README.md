@@ -17,8 +17,8 @@ of the data
 
 4. # spi_cmd_handling.c
 
-Full-duplex configuration, transmiting and receiving data from the Arduino Uno. The master (STM32F4xx) sends a command (ex. turn on the led on the digital pin 9) 
-and the arduino sends back an acknowledgemnt. If the arduino acknowledged the command, the master will send the pin number and whether the led should be on or off.
+Full-duplex configuration, transmiting and receiving data from the Arduino Uno. The master (STM32F4xx) sends a command (ex. COMMAND_LED_CTRL = 0x50) 
+and the arduino (slave) sends back an acknowledgemnt. If the arduino acknowledged the command, the master will send the pin number and whether the led should be on or off.
 There's also a screenshot taken using logic analizer.
 
 5. # spi_cmd_handling_interrupt.c 
