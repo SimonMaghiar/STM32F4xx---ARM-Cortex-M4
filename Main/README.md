@@ -24,3 +24,22 @@ There's also a screenshot taken using logic analizer.
 5. # spi_cmd_handling_interrupt.c 
 
 The same principle as the 4. but in this case we use interrupt to generate the transmission and recepcion of the data. This is a *non-blocking alternative*.
+ 
+6. # i2c_master_tx_testing.c
+
+By pressing the button, we send data over I2C. We are using standard mode (100Khz). We don't use interrupts for this. There's also a file captured with logic analyzer to check the signals. Note ! The data is sent to an Arduino Uno, and the sketch for it can be found in the arduino folder.
+
+7. # i2c_master_rx_testing.c
+
+STM32F466 is the master and the Arduino Uno is the slave.  The working priciple is the following:
+Based on the commands we send to the slave, the slave will respond differently.
+1. We send a command_code = (0x51) to Arduino and this command means that we are requesting the length of data that we want to receive
+2.We send a read command (R/W bit = 1) to receive the length and store it in the len variable.
+3. We send a command_code = (0x52) to slave to ask to start transmitting the data.
+4.We send a read command (R/W bit = 1) to receive the data from the slave and store the data in a global array (rcv_buf) 
+
+Note: We use 7 bit addressing mode and the first byte we send after START bit is (Address bit << 1) + (R/W bit) followed by acknowledgemt
+
+
+This project
+
