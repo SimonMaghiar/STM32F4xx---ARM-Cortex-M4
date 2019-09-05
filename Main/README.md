@@ -45,7 +45,9 @@ The sketch for the Arduino for this project can be found in the Arduino folder a
 8. # i2c_master_rx_testingIRQ.c
 
 The working principle is the same as i2c_master_rx_testing.c but this time we are using *non_blocking* APIs. We are enabling the interrupt from the I2C and based on the different interrupts (depeding which flags are set in the status register SR1, SR2), we send/receive the data. 
+
 Note1: Error handling is interrupt is not implemented!
+
 Note2: All the i2c projects assumes that STM32F is the MASTER. I didn't implement the other case if the STM32F is acting as slave!
 
 Note3: The master generates always the START, STOP bit. Also the Master tells the slave whether he wants to write data or to read data from the slave. This is done by the R/W bit which is the LSB on the address byte (address length = 7 bit + 1  bit R/W bit)
