@@ -34,9 +34,9 @@ By pressing the button, we send data over I2C. We are using standard mode (100Kh
 STM32F466 is the master and the Arduino Uno is the slave.  The working priciple is the following:
 Based on the commands we send to the slave, the slave will respond differently.
 1. We send a command_code = (0x51) to Arduino and this command means that we are requesting the length of data that we want to receive
-2.We send a read command (R/W bit = 1) to receive the length and store it in the len variable.
+2. We send a read command (R/W bit = 1) to receive the length and store it in the len variable.
 3. We send a command_code = (0x52) to slave to ask to start transmitting the data.
-4.We send a read command (R/W bit = 1) to receive the data from the slave and store the data in a global array (rcv_buf) 
+4. We send a read command (R/W bit = 1) to receive the data from the slave and store the data in a global array (rcv_buf) 
 
 Note: We use 7 bit addressing mode and the first byte we send after START bit is (Address bit << 1) + (R/W bit) followed by acknowledgemt
 
