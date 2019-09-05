@@ -39,6 +39,7 @@ Based on the commands we send to the slave, the slave will respond differently.
 4. We send a read command (R/W bit = 1) to receive the data from the slave and store the data in a global array (rcv_buf) 
 
 Note: We use 7 bit addressing mode and the first byte we send after START bit is (Address bit << 1) + (R/W bit) followed by acknowledgemt
+The sketch for the Arduino for this project can be found in the Arduino folder and also a file captured with logic analyzer.
 
 
 8. # i2c_master_rx_testingIRQ.c
@@ -49,3 +50,4 @@ Note2: All the i2c projects assumes that STM32F is the MASTER. I didn't implemen
 
 Note3: The master generates always the START, STOP bit. Also the Master tells the slave whether he wants to write data or to read data from the slave. This is done by the R/W bit which is the LSB on the address byte (address length = 7 bit + 1  bit R/W bit)
 
+The sketch for the Arduino for this project can be found in the Arduino folder(it's the same sketch used for i2c_master_rx_testing.c)  and also a file captured with logic analyzer.
