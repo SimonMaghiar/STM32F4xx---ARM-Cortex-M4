@@ -53,3 +53,11 @@ Note2: All the i2c projects assumes that STM32F is the MASTER. I didn't implemen
 Note3: The master generates always the START, STOP bit. Also the Master tells the slave whether he wants to write data or to read data from the slave. This is done by the R/W bit which is the LSB on the address byte (address length = 7 bit + 1  bit R/W bit)
 
 The sketch for the Arduino for this project can be found in the Arduino folder(it's the same sketch used for i2c_master_rx_testing.c)  and also a file captured with logic analyzer.
+
+9. # uart_tx.c
+
+This sends a text to Arduino Uno via UART. It uses 115200 baud rate and 8 bit world length. The parity check is dissabled. 1 stop bit and CTSE and RTSE pins are dissabled (hardware flow control disabled). The Arduino sketch receives the data and prints on the serial monitor. 
+
+10. # uart_tx_rx_IRQ.c
+
+The same working principle as uart_tx_c but uses non-blocking APIs to send the information to Arduino. The Arduino sketch is the same.
