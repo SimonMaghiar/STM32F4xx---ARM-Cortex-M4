@@ -1,5 +1,3 @@
-#These are the different projects I made using the drivers
-
 1. # button_interrupt_handling.c 
 Is using an external button attached to PC13 and by pressing it, an External interrupt is generated. EXTI15_10_IRQHandler
 is the handler function of the interrupt since PC13 can generate an EXTI13 interrupt configured at falling edge. Inside of the interrupt, a built-in 
@@ -56,8 +54,9 @@ The sketch for the Arduino for this project can be found in the Arduino folder(i
 
 9. # uart_tx.c
 
-This sends a text to Arduino Uno via UART. It uses 115200 baud rate and 8 bit world length. The parity check is dissabled. 1 stop bit and CTSE and RTSE pins are dissabled (hardware flow control disabled). The Arduino sketch receives the data and prints on the serial monitor. 
+This sends a text to Arduino Uno via UART. It uses 115200 baud rate and 8 bit world length. The parity check is dissabled. 1 stop bit and CTSE and RTSE pins are dissabled (hardware flow control disabled). The Arduino sketch receives the data and prints on the serial monitor. The signals for this project is captured and stored in the logic analyzer folder.
 
 10. # uart_tx_rx_IRQ.c
 
 The same working principle as uart_tx_c but uses non-blocking APIs to send the information to Arduino. The Arduino sketch is the same.
+
