@@ -68,7 +68,7 @@ void GPIO_BUTTONInit()
 	GPIO_Handle GpioButton;
 	GpioButton.pGPIOx = GPIOC;
 	GpioButton.GPIO_PinConfig.GPIO_PinNUmber = GPIO_PIN_13;
-	GpioButton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IT_FT;
+	GpioButton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
 
 	GPIO_PeriClockControl(GPIOC,ENABLE);
 	GPIO_Init(&GpioButton);
